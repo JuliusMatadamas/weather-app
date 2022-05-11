@@ -1,6 +1,7 @@
 import React from "react";
+import FormSearch from "./FormSearch";
 
-const Navbar = ({title}) => {
+const Navbar = ({title, search, getSearchValue, consultWeather}) => {
     return (
         <nav className="navbar navbar-dark bg-dark text-light">
             <div className="container-fluid">
@@ -9,19 +10,11 @@ const Navbar = ({title}) => {
                     <span className="px-3 me-2">
                         City name:
                     </span>
-                    <form className="d-flex">
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Input the city name"
-                            aria-label="Search"
-                        />
-
-                        <button
-                            className="btn btn-outline-light"
-                            type="submit"
-                        >Search</button>
-                    </form>
+                    <FormSearch
+                        search = {search}
+                        getSearchValue = {getSearchValue}
+                        consultWeather = {consultWeather}
+                    />
                 </div>
             </div>
         </nav>
